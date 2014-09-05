@@ -224,3 +224,156 @@ All responses have *status* field and *success* field. If something is wrong, re
     "confirmations": 3
 }
 ```
+
+### 2. 7. Get account list
+
+**Url:** */api/getAllAccounts*
+
+**Method:** *GET*
+
+**Description:** Return the list of accounts witch was made at least one transaction or login into client.
+
+**Parameters:**
+
+none
+
+**Response:**
+
+|Field|Type|Description|
+|-----|-----|-----|
+|success|Boolean|Result of success of operation.|
+|status|String|"OK" or unique error code.|
+|accountList|Object|JSON object list of accounts.|
+
+**Example of account list: **
+```javascript
+{
+	"5347395950918755643":
+	{
+		"id":"5347395950918755643",
+		"height":0,
+		"publicKey":null,
+		"keyHeight":null,
+		"balance":50000,
+		"unconfirmedBalance":50000,
+		"guaranteedBalances":{},
+		"assetBalances":{},
+		"unconfirmedAssetBalances":{},
+		"accountTypes":{}
+	},
+	...
+}
+```
+
+### 2. 8. Get account by ID
+
+**Url:** */api/getAccountById*
+
+**Method:** *GET*
+
+**Description:** Return the account info by ID.
+
+**Parameters:**
+
+|Field|Type|Description|
+|-----|-----|-----|
+|accountId|String|ID of the account (account number).|
+
+**Response:**
+
+|Field|Type|Description|
+|-----|-----|-----|
+|success|Boolean|Result of success of operation.|
+|status|String|"OK" or unique error code.|
+|account|Object|JSON object of account.|
+
+**Example of account data: **
+```javascript
+{
+		"15641667066091303754":
+		{
+			"id":"15641667066091303754",
+			"height":0,
+			"publicKey":[245,198,181,238,98,27,210,155,138,128,191,142,120,160,133,225,40,228,196,51,131,137,10,2,9,231,253,60,215,162,254,63],
+			"keyHeight":null,
+			"balance":2119.4535,
+			"unconfirmedBalance":2119.4535,
+			"guaranteedBalances":{},
+			"assetBalances":{},
+			"unconfirmedAssetBalances":{},
+			"accountTypes":
+			{
+				"nxtlAccount":
+				{
+					"name":"nxtl",
+					"id":"15641667066091303754NODE",
+					"postfix":"NODE",
+					"amount":2119.4535,
+					"unconfirmedAmount":2119.4535
+				}
+				,"dollarAccount":
+				{
+					"name":"dollar",
+					"id":"15641667066091303754USD",
+					"postfix":"USD",
+					"amount":0,
+					"unconfirmedAmount":0
+				},
+				"euroAccount":
+				{
+					"name":"euro",
+					"id":"15641667066091303754EUR",
+					"postfix":"EUR",
+					"amount":0,
+					"unconfirmedAmount":0
+				},
+				"btcAccount":
+				{
+					"name":"btc",
+					"id":"175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W",
+					"postfix":"BTC",
+					"amount":0,
+					"unconfirmedAmount":0
+				}
+			},
+			"recentTransactions":[{"deadline":"24","senderPublicKey":"d917af7f13f4abad1907ea205d8fdb13ebde20278a78dabde043837676513b3d","recipientId":"17591617551191551229","amount":0.01,"fee":0.00004,"referencedTransactionId":"5100241183951494181","type":0,"height":787,"blockId":"6537391888209947095","signature":"bec9bb83ed59edada422920ab3a5584f047457bcc169c298150ec7bde4d10b078e8cd3057cc9061eff9742a2176683624f22826fe36c68191f6951eaeb92b8cc","timestamp":1409671213427,"attachment":null,"id":"12591178635433054986","senderId":"14931191424261653564","hash":"d8fb6e79556fa4d8d93aa14eb7b6a6bae3f2c6861bc8288aaebcda420c79930a","confirmations":1,"tbl":"transaction","_id":"xYxulFHLNvHRLAdM"}, ...]
+		}
+}
+```
+
+### 2. 9. Get peer list
+
+**Url:** */api/getAllPeers*
+
+**Method:** *GET*
+
+**Description:** Return the list of peers connected to current client.
+
+**Parameters:**
+
+none
+
+**Response:**
+
+|Field|Type|Description|
+|-----|-----|-----|
+|success|Boolean|Result of success of operation.|
+|status|String|"OK" or unique error code.|
+|peers|Object|JSON object list of peers.|
+
+**Example of peer list: **
+```javascript
+[
+	{
+		"port":19776,
+		"host":"127.0.0.1",
+		"uploadBytes":861,
+		"downloadBytes":4312,
+		"services":null,
+		"MAX_LOST_CONNECTION":10,
+		"lostConnection":0,
+		"status":"check"
+	},
+	...
+]
+```
