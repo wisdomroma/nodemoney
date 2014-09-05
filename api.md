@@ -47,7 +47,7 @@ All responses have *status* field and *success* field. If something is wrong, re
 |secretWord|String|Secret World of account converted to hex format.|
 |accountTypes|Object|Contain all accounts (see example).|
 
-**Important:** At this moment working only *nodeAccount*, other *in progress*
+**Important:** At this moment working only *nodeAccount*, other ***in progress***
 
 **Example of accountTypes:**
 ```javascript
@@ -203,7 +203,7 @@ All responses have *status* field and *success* field. If something is wrong, re
 |transaction|Object|JSON object of transaction.|
 
 
-**Example of transaction: **
+**Example of transaction:**
 ```javascript
 {
     "deadline": "24",
@@ -245,7 +245,7 @@ none
 |status|String|"OK" or unique error code.|
 |accountList|Object|JSON object list of accounts.|
 
-**Example of account list: **
+**Example of account list:**
 ```javascript
 {
 	"5347395950918755643":
@@ -287,7 +287,7 @@ none
 |status|String|"OK" or unique error code.|
 |account|Object|JSON object of account.|
 
-**Example of account data: **
+**Example of account data:**
 ```javascript
 {
 		"15641667066091303754":
@@ -361,7 +361,7 @@ none
 |status|String|"OK" or unique error code.|
 |peers|Object|JSON object list of peers.|
 
-**Example of peer list: **
+**Example of peer list:**
 ```javascript
 [
 	{
